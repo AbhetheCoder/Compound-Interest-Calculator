@@ -1,0 +1,92 @@
+<html>
+    <head>
+      
+      <link rel="stylesheet" type="text/css" href="style.css" >
+      
+      <script type="text/javascript">
+      
+          function calculate(){
+            var p = 0;
+            var i = 0;
+            var n = 0;
+            var CI = 0;
+
+            p = parseInt(document.getElementById("principal").value);
+            i = parseInt(document.getElementById("annual-interest-rate").value);
+            n = parseInt(document.getElementById("number-of-period").value);
+
+            CI = ((p*(1+i)^n)-p);
+            document.getElementById("res").innerHTML=CI;
+          }
+
+          function myFunction() {
+         var copyText = document.getElementById("res");
+          copyText.select();
+          copyText.setSelectionRange(0, 99999)
+          document.execCommand("copy");
+           alert("Copied the text: " + copyText.value);
+}
+      </script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Compond Interest Calculator</title> 
+    </head>
+
+    <body class="body">
+      <br>
+    <div class="container1">
+      <div class="card text-black bg-light mb-9" style="max-width: 200rem;">
+       
+          <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 id="title">Compound Interest Calculator</h1>
+              <hr>
+            </div>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-12">
+        <form>
+            <div class="form-group">
+                  <label class="form-group">Principal-</label>
+                  <input class="form-control" type="number" id="principal" placeholder="Amount">
+             </div>
+              <div class="form-group">
+                  <label class="form-group">Interest Rate-</label>
+                  <input class="form-control" type="text" id="annual-interest-rate"
+                  placeholder="Rate in %">
+              </div>
+              <div class="form-group">
+                  <label class="form-group">Number of periods-</label>
+                  <input class="form-control" type="text" id="number-of-period"
+                  placeholder="Period">
+              </div>
+              <button class="btn btn-block btn-info" type="button" onclick="calculate()"> <i class="fas fa-calculator"></i>  Calculate</button>
+          </form>
+            </div>
+          </div>
+          <br>
+          <div class="try">
+          <h5 class="total" .style="font-size="20px"><i class="fas fa-poll"></i> Result</h5>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <h1 id="res">0</h1>
+            </div>
+        </div>
+          </div>
+          <div class="icons"> <i class="fab fa-facebook"></i> <i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i> <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-pinterest"></i>
+        </div>
+      
+        <footer><i class="fas fa-copyright"></i> All Wrights Reserved 2021</footer>
+        </div>
+      </div>
+    </div>
+
+    </body>
+</html>
